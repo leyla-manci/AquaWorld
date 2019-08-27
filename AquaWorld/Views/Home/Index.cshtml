@@ -1,0 +1,12 @@
+﻿@using  AquaWorld.Models
+@model IEnumerable<Fish>
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var item in Model)
+{
+    <h2>@item.Name</h2>
+}
+
+
