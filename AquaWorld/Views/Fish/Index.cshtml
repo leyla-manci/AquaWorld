@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AquaWorld.Models.Fish>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Balık Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Balık Ekle", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<hr />
+
+@if (TempData["Fish"] != null)
+{
+    var fishSaved = (AquaWorld.Models.Fish)TempData["Fish"];
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"> </span><b> @fishSaved.Name</b> başarıyla kaydedildi.</div>
+
+}
+@if (TempData["NewFish"] != null)
+{
+    var newFish = (AquaWorld.Models.Fish)TempData["NewFish"];
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"> </span><b> @newFish.Name</b> başarıyla eklendi.</div>
+
+}
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>
+            <!-- @Html.DisplayNameFor(model => model.category.ShortDesc) -->
+            Kategori Adı
+        </th>
+        <th>
+            Balık Adı
+        </th>
+        <th>
+            Kısa Açıklama
+        </th>
+
+        <th>
+            Resim
+        </th>
+        <th style="width:180px;"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.category.ShortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+
+            <td>
+                <img src="~/Img/@item.FishImage" alt="Image" class="img-circle" style="width:100px; height:100px;" />
+
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Edit", new { id = item.FishId }, new { @class = "btn btn-success btn-sm fa fa-pencil" }) |
+                @Html.ActionLink(" ", "Details", new { id = item.FishId }, new { @class = "btn btn-warning btn-sm fa fa-info" }) |
+                @Html.ActionLink(" ", "Delete", new { id = item.FishId }, new { @class = "btn btn-danger btn-sm fa fa-trash" })
+            </td>
+        </tr>
+    }
+
+</table>

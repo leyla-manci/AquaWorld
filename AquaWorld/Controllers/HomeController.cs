@@ -15,7 +15,13 @@ namespace AquaWorld.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(dbContext.fishes.ToList());
+            var fishModel = dbContext.fishes
+                .Select(i => new FishModel()
+                { FishId = i.FishId ,Name = i.Name ,
+                    ShortDesc = i.ShortDesc.Length >40 ? i.ShortDesc.Substring(0,40) + " ... " : i.ShortDesc,
+                    FishImage = i.FishImage
+                }) ;
+            return View(fishModel.ToList());
         }
     }
 }

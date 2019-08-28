@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AquaWorld.Models.CategoryFishModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kategori Listesi</h2>
+<hr />
+<br />
+<br />
+
+<p>
+    @Html.ActionLink("Yeni Kategori Oluştur", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<hr />
+
+@if (TempData["CategoryEdit"] != null)
+{
+    var categorytmp = (AquaWorld.Models.Category)TempData["CategoryEdit"];
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"> </span> <strong>@categorytmp.ShortDesc</strong> kaydedildi.</div>
+}
+@if (TempData["newCategory"] != null)
+{
+    var newcategorytmp = (AquaWorld.Models.Category)TempData["newCategory"];
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"> </span> <strong>@newcategorytmp.ShortDesc</strong> oluşturuldu.</div>
+}
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th style="width:70%;">
+            Kategori Adı
+        </th>
+        <th style="width:13%;">
+            Balık Sayısı
+        </th>
+        <th style="width:150px;"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                <label>@item.FishCount</label>
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-success btn-sm fa fa-pencil" }) |
+                @Html.ActionLink(" ", "Details", new { id = item.CategoryId }, new { @class = "btn btn-warning btn-sm fa fa-info" }) |
+                @Html.ActionLink(" ", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-danger btn-sm fa fa-trash" })
+            </td>
+        </tr>
+    }
+
+</table>
