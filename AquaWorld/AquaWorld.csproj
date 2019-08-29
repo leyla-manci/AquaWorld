@@ -184,6 +184,10 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\CategoryList.cshtml" />
+    <Content Include="Views\Fish\List.cshtml" />
+    <Content Include="Views\Shared\FishList.cshtml" />
+    <Content Include="Views\Shared\TextSearch.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

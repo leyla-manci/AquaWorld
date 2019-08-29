@@ -14,6 +14,36 @@ namespace AquaWorld.Controllers
     {
         private AquaWorldContext db = new AquaWorldContext();
 
+        public ActionResult List(int? id, string q)
+        {
+            var fishModel = db.fishes
+                           .Select(i => new FishModel()
+                           {
+                               FishId = i.FishId,
+                               Name = i.Name,
+                               ShortDesc = i.ShortDesc.Length > 40 ? i.ShortDesc.Substring(0, 40) + " ... " : i.ShortDesc,
+                               FishImage = i.FishImage,
+                               CategoryId = i.CategoryId,
+                               LongDesc = i.LongDesc
+                           }).AsQueryable();
+
+            if (id != null)
+            {
+                fishModel = fishModel.Where(i => i.CategoryId == id);
+
+            }
+
+            if (string.IsNullOrEmpty(q) == false)
+            {
+                fishModel = fishModel.Where(i => i.Name.Contains(q) || i.ShortDesc.Contains(q) || i.LongDesc.Contains(q));
+
+            }
+
+
+            return View(fishModel.ToList());
+        }
+
+
         // GET: Fish
         public ActionResult Index()
         {

@@ -1,0 +1,58 @@
+﻿@using AquaWorld.Models
+@model IEnumerable<FishModel>
+
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-info"> İlgili Kategoride Kayıtlı Balık Bulunamadı.</div>
+}
+else
+{
+
+    <div class="album bg-light">
+        <div class="row">
+
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card py-5 mt-2" style="box-shadow:rgba(0,0,0,0.2) 3px 3px; margin:0.8rem;border-radius:3px;">
+                        @if (item.FishImage == "")
+                        {
+
+
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                                <title>@item.Name</title>
+                                <rect width="100%" height="100%" fill="#55595c" />
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">@item.Name</text>
+                            </svg>
+
+                        }
+                        else
+                        {
+
+                            <img src="~/Img/@item.FishImage" class="card-img-top img-rounded" alt="..." style="width:100%; height:225px;">
+                            <p class="card-text"><b> @item.Name </b></p>
+                        }
+
+                        <div class="card-body">
+                            <p class="card-text"><small>@item.ShortDesc</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+
+                                    @Html.ActionLink("Detay", "Details", "Fish", new { id = item.FishId }, new { @class = "btn btn-sm btn-outline-primary" })
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+
+}
+
+

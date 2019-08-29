@@ -1,0 +1,14 @@
+﻿@using (Html.BeginForm("List","Fish",FormMethod.Get))
+{
+
+    <form class="card p-2">
+        <p><span class="text-muted">İçeriğe Göre Listele</span></p>
+        <div class="input-group form-horizontal">
+
+            <input type="text" class="form-control" placeholder="" name="q">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-secondary">Ara</button>
+            </div>
+        </div>
+    </form>
+}

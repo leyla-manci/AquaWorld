@@ -27,6 +27,11 @@ namespace AquaWorld.Controllers
             return View(categoryFishModel.ToList());
         }
 
+        public PartialViewResult CategoryList() {
+
+            return PartialView(db.categories.ToList());
+        }
+
         // GET: Category/Details/5
         public ActionResult Details(int? id)
         {

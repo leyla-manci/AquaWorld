@@ -1,0 +1,20 @@
+﻿@using AquaWorld.Models
+@model IEnumerable<Category>
+
+    <div style="margin-top:3rem;">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Kategoriye Göre Listele</span>
+        </h4>
+        <ul class="list-group mb-3">
+            @foreach (var item in Model)
+            {          
+                <li class="list-group-item">
+                    <div>
+                            @Html.ActionLink(item.ShortDesc, "List", "Fish", new { Id = item.CategoryId }, new { @class = "my-0 text-muted" })
+                       
+                    </div>
+                </li>
+           
+            }
+        </ul>
+    </div>

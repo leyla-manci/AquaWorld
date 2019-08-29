@@ -23,5 +23,6 @@ namespace AquaWorld.Controllers
                 }) ;
             return View(fishModel.ToList());
         }
+
     }
 }

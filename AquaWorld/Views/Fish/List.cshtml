@@ -5,11 +5,12 @@
 }
 
 <hr />
-@Html.Partial("FishList", Model)
-
+@Html.Partial("FishList",Model)
 
 @section SagKolon{
+
     @Html.Partial("TextSearch")
+
 
     @{Html.RenderAction("CategoryList", "Category"); }
 
