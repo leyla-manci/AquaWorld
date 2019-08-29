@@ -28,7 +28,9 @@ namespace AquaWorld.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Fish fish = db.fishes.Find(id);
+            //Fish fish = db.fishes.Find(id);
+            var fishes = db.fishes.Include(f => f.category).AsQueryable().Where(i=> i.FishId == id);
+            Fish fish = (Fish)fishes.First();
             if (fish == null)
             {
                 return HttpNotFound();

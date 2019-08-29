@@ -1,58 +1,58 @@
 ﻿@model AquaWorld.Models.Fish
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detay";
 }
 
-<h2>Details</h2>
+<h2>Balık Detay</h2>
 
-<div>
-    <h4>Fish</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.category.ShortDesc)
-        </dt>
 
-        <dd>
+<hr />
+<div class="row">
+
+
+    <div class="col-md-8">
+
+        <b> Kategori Adı </b>
+        <p>
+
             @Html.DisplayFor(model => model.category.ShortDesc)
-        </dd>
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+        <b>  Balık Adı </b>
+        <p>
 
-        <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShortDesc)
-        </dt>
+        <b> Balık Kısa Açıklama </b>
+        <p>
 
-        <dd>
             @Html.DisplayFor(model => model.ShortDesc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LongDesc)
-        </dt>
-
-        <dd>
+        </p>
+        <b> Uzun Açıklama </b>
+        <p>
             @Html.DisplayFor(model => model.LongDesc)
-        </dd>
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FishImage)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FishImage)
-        </dd>
+    </div>
+    <div class="col-md-4">
 
-    </dl>
+
+
+
+        <img src="~/Img/@Model.FishImage" alt="Image" class="img-rounded" style="width:100%; height:200px;" />
+
+
+    </div>
+
+
+
+
 </div>
+<hr />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.FishId }) |
-    @Html.ActionLink("Back to List", "Index")
+   
+    @Html.ActionLink("Listeye Dön", "Index", "Home",null, new { @class = "btn btn-sm btn-primary" })
 </p>

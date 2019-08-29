@@ -31,12 +31,13 @@
                             }
                             else
                             {
-                                <img src="~/Img/@item.FishImage" class="card-img-top img-rounded" alt="..." style="width:100%; height:225px;">
 
+                                <img src="~/Img/@item.FishImage" class="card-img-top img-rounded" alt="..." style="width:100%; height:225px;">
+                                <p class="card-text"><b> @item.Name </b></p>
                             }
 
                             <div class="card-body">
-                                <p class="card-text">@item.ShortDesc</p>
+                                <p class="card-text"><small>@item.ShortDesc</small></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
 
