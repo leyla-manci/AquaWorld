@@ -8,28 +8,29 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/63741381e7.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
     <style>
 
-     .fixedGoUp {
-  display: block; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: lightcoral; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 50%; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
-}
+        .fixedGoUp {
+            display: block; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: gray; /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 50%; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+        }
 
-.fixedGoUp:hover {
-  background-color:orange; /* Add a dark-grey background on hover */
-}
-
+            .fixedGoUp:hover {
+                background-color: dimgray; /* Add a dark-grey background on hover */
+            }
     </style>
 
 
@@ -43,14 +44,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Su Dünyası", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("  Su Dünyası", "Index", "Home", null, new { @class = "navbar-brand fa fa-home" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(" ", "Index", "Home", new { @class = "fa fa-home" })</li>
-                    <li>@Html.ActionLink("Hakkında", "About", "Home")</li>
-                    <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
-                </ul>
+            <div class="navbar-collapse collapse navbar-right">
+
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <label class="nav navbar-text ">@User.Identity.Name</label>
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("  Çıkış Yap", "Logout", "Account", null, new { @class = "glyphicon glyphicon-log-out" })</li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("  Giriş Yap", "Login", "Account", null, new { @class = "glyphicon glyphicon-log-in" })</li>
+                    </ul>
+                }
+
             </div>
         </div>
     </div>

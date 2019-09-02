@@ -1,0 +1,34 @@
+﻿@using  Microsoft.AspNet.Identity.EntityFramework
+@model IEnumerable<IdentityUser>
+@{
+    ViewBag.Title = "Index";
+}
+
+<p><hr /></p>
+    <div class="panel panel-primary">
+        <div class="panel-heading"> Kullanıcılar</div>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Kullanıcı Adı</th>
+                <th>Email</th>
+            </tr>
+            @if (Model.Count() == 0)
+            {
+                <tr><td colspan="3"> Kullanıcı Yok</td></tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                { 
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.UserName</td>
+                        <td>@item.Email</td>
+                    </tr>
+                 }
+            }
+        </table>
+
+    </div>
+

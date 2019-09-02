@@ -10,6 +10,7 @@ using AquaWorld.Models;
 
 namespace AquaWorld.Controllers
 {
+    [Authorize]
     public class FishController : Controller
     {
         private AquaWorldContext db = new AquaWorldContext();

@@ -10,6 +10,7 @@ using AquaWorld.Models;
 
 namespace AquaWorld.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private AquaWorldContext db = new AquaWorldContext();
@@ -27,6 +28,8 @@ namespace AquaWorld.Controllers
             return View(categoryFishModel.ToList());
         }
 
+        [AllowAnonymous]
+        [ChildActionOnly]
         public PartialViewResult CategoryList() {
 
             return PartialView(db.categories.ToList());
