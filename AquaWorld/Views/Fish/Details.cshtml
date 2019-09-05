@@ -40,10 +40,24 @@
     <div class="col-md-4">
 
 
+        @if (string.IsNullOrEmpty(Model.FishImage))
+        {
 
 
-        <img src="~/Img/@Model.FishImage" alt="Image" class="img-rounded" style="width:100%; height:200px;" />
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="220px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <title>@Model.Name</title>
+                <rect width="100%" height="100%" fill="#55595c" />
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">@Model.Name</text>
+            </svg>
 
+        }
+        else
+        {
+
+
+            <img src="~/Img/@Model.FishImage" alt="Image" class="img-rounded" style="width:100%; height:200px;" />
+            
+        }
 
     </div>
 

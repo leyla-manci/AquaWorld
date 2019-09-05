@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+@model IEnumerable<IdentityRole>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Rol Listesi</h2>
+<hr />
+<div class="panel panel-primary">
+    <table class="table table-striped">
+        <tr>
+            <th>Rol Id</th>
+            <th>Rol Adı</th>
+            <th></th>
+        </tr>
+
+        <thead>
+
+        </thead>
+        <tbody>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="3"> Herhangi bir rol bulunamadı.</td>
+                </tr>
+
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>
+                            @using (Html.BeginForm("Delete","Role",new { Id = item.Id }))
+                            {
+                               @Html.ActionLink(" ", "Edit", "Role", new { roleId = item.Id }, new { @class = "btn btn-success btn-sm fa fa-pencil" })
+                               <button type="submit" class="btn btn-danger btn-sm fa fa-trash"></button>
+
+                            }
+
+                        </td>
+                    </tr>
+
+                }
+
+            }
+
+
+
+        </tbody>
+    </table>
+</div>
+<hr />
+@Html.ActionLink("Yeni Rol Oluştur", "Create", "Role", null, new { @class = "btn btn-primary" })
+

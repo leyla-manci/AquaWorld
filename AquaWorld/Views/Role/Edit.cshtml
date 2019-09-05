@@ -1,0 +1,83 @@
+﻿@model AquaWorld.Models.RoleUsersModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@Model.identityRole.Name Kullanıcıları Düzenle</h2>
+<hr />
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="RoleName" value="@Model.identityRole.Name" />
+    <input type="hidden" name="RoleId" value="@Model.identityRole.Id" />
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">@Model.identityRole.Name Üye Kullanıcılar</div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Rolden Çıkar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.members.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="2">Role üye kullanıcı yok</td>
+                    </tr>
+
+                }
+                else
+                {
+                    foreach (var item in Model.members)
+                    {
+                        <tr>
+                            <td>@item.UserName</td>
+                            <td><input type="checkbox" class="checkbox checkbox-inline" name="IdListtoDelete" value="@item.Id" /></td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+
+        </table>
+    </div>
+    <hr />
+    <div class="panel panel-primary">
+        <div class="panel-heading">@Model.identityRole.Name Üye Olmayan Kullanıcılar</div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Role Ekle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.nonMembers.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="2">Role eklenebilecek kullanıcı yok</td>
+                    </tr>
+
+                }
+                else
+                {
+                    foreach (var item in Model.nonMembers)
+                    {
+                        <tr>
+                            <td>@item.UserName</td>
+                            <td><input type="checkbox" class="checkbox checkbox-inline" name="IdListtoAdd" value="@item.Id" /></td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+
+        </table>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+}
+

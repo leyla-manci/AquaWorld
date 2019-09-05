@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace AquaWorld.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private UserManager<IdentityUser> userManager;

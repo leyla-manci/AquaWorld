@@ -15,6 +15,7 @@ namespace AquaWorld.Controllers
     {
         private AquaWorldContext db = new AquaWorldContext();
 
+        [Authorize(Roles = "Admin")]
         // GET: Category
         public ActionResult Index()
         {
@@ -50,6 +51,8 @@ namespace AquaWorld.Controllers
             return View(category);
         }
 
+
+        [Authorize(Roles = "Admin")]
         // GET: Category/Create
         public ActionResult Create()
         {
@@ -61,6 +64,7 @@ namespace AquaWorld.Controllers
         // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "ShortDesc,LongDesc")] Category category)
         {
             if (ModelState.IsValid)
@@ -75,6 +79,7 @@ namespace AquaWorld.Controllers
         }
 
         // GET: Category/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -94,6 +99,7 @@ namespace AquaWorld.Controllers
         // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "CategoryId,ShortDesc,LongDesc")] Category category)
         {
             if (ModelState.IsValid)
@@ -107,6 +113,7 @@ namespace AquaWorld.Controllers
         }
 
         // GET: Category/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,6 +128,7 @@ namespace AquaWorld.Controllers
             return View(category);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Category/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

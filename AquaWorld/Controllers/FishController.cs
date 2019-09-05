@@ -45,6 +45,7 @@ namespace AquaWorld.Controllers
         }
 
 
+        [Authorize(Roles = "Admin")]
         // GET: Fish
         public ActionResult Index()
         {
@@ -69,6 +70,7 @@ namespace AquaWorld.Controllers
             return View(fish);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Fish/Create
         public ActionResult Create()
         {
@@ -81,6 +83,7 @@ namespace AquaWorld.Controllers
         // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "Name,ShortDesc,LongDesc,FishImage,CategoryId")] Fish fish)
         {
             if (ModelState.IsValid)
@@ -96,6 +99,7 @@ namespace AquaWorld.Controllers
         }
 
         // GET: Fish/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -116,6 +120,7 @@ namespace AquaWorld.Controllers
         // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "FishId,Name,ShortDesc,LongDesc,FishImage,CategoryId")] Fish fish)
         {
             if (ModelState.IsValid)
@@ -142,6 +147,7 @@ namespace AquaWorld.Controllers
         }
 
         // GET: Fish/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -159,6 +165,7 @@ namespace AquaWorld.Controllers
         // POST: Fish/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Fish fish = db.fishes.Find(id);

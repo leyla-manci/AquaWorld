@@ -21,6 +21,12 @@ namespace AquaWorld.Controllers
         {
             var userStore = new UserStore<IdentityUser>(new IdentityDataContext());
             userManager = new UserManager<IdentityUser>(userStore);
+
+            userManager.UserValidator = new UserValidator<IdentityUser>(userManager)
+            {
+                AllowOnlyAlphanumericUserNames = false,
+                RequireUniqueEmail = true
+            };
         }
 
 
@@ -34,6 +40,10 @@ namespace AquaWorld.Controllers
         [HttpGet]
         public ActionResult Login(string returnUrl)
         {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                return View("Error",new string[] {"Erişim hakkınız yok"});
+            }
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }

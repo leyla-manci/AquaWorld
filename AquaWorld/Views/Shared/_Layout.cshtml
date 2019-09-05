@@ -54,6 +54,11 @@
                     <label class="nav navbar-text ">@User.Identity.Name</label>
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("  Çıkış Yap", "Logout", "Account", null, new { @class = "glyphicon glyphicon-log-out" })</li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink(" Admin Paneli", "Index", "Admin", null, new { @class = "glyphicon glyphicon-sunglasses" })</li>
+
+                        }
                     </ul>
                 }
                 else

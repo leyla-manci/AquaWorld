@@ -1,0 +1,19 @@
+﻿@model string
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Role Ouştur</h2>
+<hr />
+
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>Role Adı</label>
+        <input name="roleName" value="@Model" type="text" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Oluştur</button>
+}
+
