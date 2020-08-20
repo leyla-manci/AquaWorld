@@ -3,8 +3,8 @@
 
 ***   
    structure : Model-View-Controller </br>
-    AquaWorldContext:DbContext  : this class use dbConnectString and AquaWorldInitializer as initializer</br>
-    AquaWorldInitializer : DropCreateDatabaseIfModelChanges<AquaWorldContext>  : this initializer seed db with dummy data in case modelchanges 
+    AquaWorldContext:DbContext  : this class uses dbConnectString and AquaWorldInitializer as initializer</br>
+    AquaWorldInitializer : DropCreateDatabaseIfModelChanges<AquaWorldContext>  : this initializer drops,creates and seeds db with dummy data in case modelchanges 
 *** 
    <b>  Screen Shots </b> 
    </br>
