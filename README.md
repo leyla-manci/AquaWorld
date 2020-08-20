@@ -3,7 +3,7 @@
 
 <p> structure : ModeView-Controller </br>
     AquaWorldContext:DbContext  : this class use dbConnectString and AquaWorldInitializer as initializer</br>
-    AquaWorldInitializer : DropCreateDatabaseIfModelChanges<AquaWorldContext>  : this initializer seed db with dummy data in case modelchanges r</p>
+    AquaWorldInitializer : DropCreateDatabaseIfModelChanges<AquaWorldContext>  : this initializer seed db with dummy data in case modelchanges </p>
 
 <table><tr><td>
  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/home_page.png">
