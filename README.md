@@ -11,10 +11,47 @@
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/admin_panel.png">
 * Admin Panel
  </td>
-  <td>
+</tr>
+ <tr>
+ <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/fish_list_settings.png">
 * fish list settings
- </td></tr></table>
+ </td>
+ <td>
+  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/fish_detail_settings.png">
+* fish detail settings
+ </td>
+ </tr>
+<tr>
+ <td>
+  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/category_settings.png">
+* category settings
+ </td>
+ <td>
+  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/user_settings.png">
+* user settings
+ </td>
+ </tr>
+ <tr>
+ <td>
+  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/role_member_settings.png">
+* role member settings
+ </td>
+ <td>
+  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/db.png">
+* db
+ </td>
+ </tr>
+  <tr>
+ <td>
+  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/db_connection_str.png">
+* db connection string
+ </td>
+ <td>
+  
+ </td>
+ </tr>
+</table>
 
 
 ***
