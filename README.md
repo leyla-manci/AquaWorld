@@ -2,11 +2,12 @@
 .net mvc project- Aquaworld
 
 ***   
-   structure : ModeView-Controller </br>
+   structure : Model-View-Controller </br>
     AquaWorldContext:DbContext  : this class use dbConnectString and AquaWorldInitializer as initializer</br>
     AquaWorldInitializer : DropCreateDatabaseIfModelChanges<AquaWorldContext>  : this initializer seed db with dummy data in case modelchanges 
 *** 
    <b>  Screen Shots </b> 
+   </br>
    
 <table><tr><td>
  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/home_page.png">
