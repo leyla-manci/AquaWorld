@@ -13,6 +13,8 @@
  <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/home_page.png">
 * Home Page
  </td>
+   </tr>
+ <tr>
  <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/admin_panel.png">
 * Admin Panel
@@ -22,7 +24,8 @@
  <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/fish_list_settings.png">
 * fish list settings
- </td>
+ </td></tr>
+ <tr>
  <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/fish_detail_settings.png">
 * fish detail settings
@@ -32,7 +35,8 @@
  <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/category_settings.png">
 * category settings
- </td>
+ </td></tr>
+ <tr>
  <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/user_settings.png">
 * user settings
@@ -42,7 +46,8 @@
  <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/role_member_settings.png">
 * role member settings
- </td>
+ </td></tr>
+ <tr>
  <td>
   <img src="https://github.com/leyla-manci/AquaWorld/blob/master/_screenshots/db.png">
 * db
