@@ -2,10 +2,11 @@
 .net mvc project- Aquaworld
 
 ***   
-   structure : Model-View-Controller </br>
-    AquaWorldContext:DbContext  : this class uses dbConnectString and AquaWorldInitializer as initializer</br>
-    AquaWorldInitializer : DropCreateDatabaseIfModelChanges<AquaWorldContext>  : this initializer drops,creates and seeds db with dummy data in case modelchanges </br>
-    User processes are done by IdentityDataContext: IdentityDbContext<IdentityUser> use identityConnection and IdentityInitializer. Also you can  find seed data for admin and user in scope of IdentityInitializer.
+  -  structure : Model-View-Controller </br>
+  -  AquaWorldContext:DbContext  : this class uses dbConnectString and AquaWorldInitializer as initializer</br>
+  -  AquaWorldInitializer : DropCreateDatabaseIfModelChanges<AquaWorldContext>  : this initializer drops,creates and seeds db with dummy data in case modelchanges </br>
+  -  User processes are done by IdentityDataContext: IdentityDbContext<IdentityUser> use identityConnection and IdentityInitializer. Also you can  find seed data for admin and user in scope of IdentityInitializer.</br>
+  - API : you can find api controller to use as webservice : "  FishWsrController : ApiController"
   
 
    
